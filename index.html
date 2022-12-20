@@ -188,6 +188,233 @@
             
 
   
+    <article id="post-vueblog-server" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/12/19/vueblog-server/" target="_blank">vueblog-server</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/12/19/vueblog-server/" class="archive-article-date">
+        <time datetime="2022-12-19T09:37:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <blockquote>
+<p>记录后端项目过程中的疑难点以及重要知识点。</p>
+</blockquote>
+<h2 id="一、IDEA新建Springboot项目"><a href="#一、IDEA新建Springboot项目" class="headerlink" title="一、IDEA新建Springboot项目"></a>一、IDEA新建Springboot项目</h2><blockquote>
+<p>1.创建SpringBoot项目时添加<strong>Spring Boot DevTools</strong>、<strong>Lombok</strong>、<strong>Spring Web</strong>、<strong>MySQL Driver</strong>的jar包</p>
+<p>聊一聊jar包：</p>
+<p>jar包是对写好的类进行了打包。我们可以通过将jar包放到lib目录下来使用这些jar包中的类、属性和方法。 其作用主要是：</p>
+<ol>
+<li>用于发布和使用类库</li>
+<li>作为应用程序和扩展的构建单元 </li>
+<li>作为组件、applet 或者插件程序的部署单位 </li>
+<li>用于打包与组件相关联的辅助资源</li>
+</ol>
+</blockquote>
+    
+    <a class="article-more-a" href="/2022/12/19/vueblog-server/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客后端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Mybatisplus</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shiro</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jwt</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/12/19/vueblog-server/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-library-import" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/12/19/library-import/" target="_blank">library-import</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/12/19/library-import/" class="archive-article-date">
+        <time datetime="2022-12-19T03:17:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="一、创建新的数据库"><a href="#一、创建新的数据库" class="headerlink" title="一、创建新的数据库"></a>一、创建新的数据库</h2><p>​	Neo4j在数据库操作方面，可视化做得不是太好，Neo4j 4.*版本好像提供了较为快捷的创建数据库方式，但为了兼容JDK8，我安装的是3.5.35版本，网上查阅一些资料：改变Neo4j配置创建新数据库。 </p>
+<ol>
+<li><p>找到Neo4j安装目录下 <strong>conf&#x2F;neo4j.conf</strong>配置文件</p>
+</li>
+<li><p>去掉注释符号，修改键值对<strong>dbms.active_database&#x3D;test.db</strong></p>
+<p><img src="/2022/12/19/library-import/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220923171314-1671419844081.png"></p>
+</li>
+<li><p>创建成功，打开Neo4j安装目录下的 <strong>data&#x2F;databases</strong>目录，可以看到：</p>
+<p><img src="/2022/12/19/library-import/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220923171543-1671419844081.png"></p>
+</li>
+<li><p>重启Neo4j console即可</p>
+</li>
+<li><p>根据以上步骤，创建新数据库Library1.db，重启Neo4j console</p>
+</li>
+</ol>
+    
+    <a class="article-more-a" href="/2022/12/19/library-import/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">neo4j</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pandas</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">csv</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/12/19/library-import/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-web应用安全" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -217,8 +444,6 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-      <!-- Table of Contents -->
-    
     <h2 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h2><ol>
 <li>理解web应用工作原理</li>
 <li>理解常见web漏洞原理，包括：XSS 跨站脚本、CSRF 跨站请求、命令注入、 SQL 注入等</li>
@@ -229,10 +454,9 @@
 <li>配置 Web 攻防实验环境</li>
 <li>针对靶机 DVWA，进行命令注入、SQL 注入、XSS、CSRF 攻击，安全级别主要包括 low level 和 medium level。</li>
 </ol>
-<h2 id="三、实验原理"><a href="#三、实验原理" class="headerlink" title="三、实验原理"></a>三、实验原理</h2><h2 id="四、实验过程"><a href="#四、实验过程" class="headerlink" title="四、实验过程"></a>四、实验过程</h2><h3 id="4-1-环境搭建"><a href="#4-1-环境搭建" class="headerlink" title="4.1 环境搭建"></a>4.1 环境搭建</h3><p>​		下载 OWASPBWA 虚拟机镜像，导入 vmware。 网址：<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/owaspbwa/files/latest/download">https://sourceforge.net/projects/owaspbwa/files/latest/download</a>.</p>
-<p>​		靶机的网络设置请避免使用桥架模式。 如果从宿主机进行靶机渗透，则需要确保宿主机和靶机的网络连接正确。也可以从另一台虚拟机发起渗透测试，同时也需要事先确保网络配置正确。</p>
-<p>​		通过浏览器访问靶机的 IP 地址，然后从页面选择 DVWA，进入 DVWA 应用。也可以直接访问 URL：<a target="_blank" rel="noopener" href="http://192.168.44.131/dvwa/login.php%E3%80%82%E6%B3%A8%E6%84%8F%E6%9B%BF%E6%8D%A2%E4%B8%BA%E4%B8%AA%E4%BA%BA%E7%8E%AF%E5%A2%83%E7%9A%84">http://192.168.44.131/dvwa/login.php。注意替换为个人环境的</a> IP 地 址。登录到 DVWA，用户名：admin；口令：admin。</p>
-<h3 id="4-2-命令注入攻击"><a href="#4-2-命令注入攻击" class="headerlink" title="4.2 命令注入攻击"></a>4.2 命令注入攻击</h3>
+    
+    <a class="article-more-a" href="/2022/12/08/web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8/#more">more >></a>
+    
     
 
     
@@ -253,6 +477,26 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">DVWA</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">XSS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CSRF</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SQL注入</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">命令注入</a>
         		</li>
       		
 		</ul>
@@ -611,6 +855,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络安全</a>
               </li>
              
@@ -627,11 +875,59 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">neo4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">csv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">博客后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Mybatisplus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shiro</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jwt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">DVWA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSRF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">命令注入</a>
               </li>
             
             <div class="clearfix"></div>
